@@ -342,6 +342,6 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(249, 249, 249, 0.88);
+  background: rgba(249, 249, 249, 0.60);
   z-index: -1;
 }
