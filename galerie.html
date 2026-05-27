@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerie – Sites patrimoniaux de Ouagadougou</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .galerie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .galerie-grid img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .galerie-grid img:hover { transform: scale(1.04); }
+
+    /* Lightbox */
+    #lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; flex-direction:column; }
+    #lightbox.active { display:flex; }
+    #lightbox img { max-width:90vw; max-height:80vh; border-radius:8px; }
+    #lightbox .close { position:absolute; top:18px; right:28px; font-size:2rem; color:#fff; cursor:pointer; }
+    #lightbox .prev, #lightbox .next { position:absolute; top:50%; font-size:2rem; color:#fff; cursor:pointer; background:rgba(0,0,0,0.4); border:none; padding:10px 16px; border-radius:50%; transform:translateY(-50%); }
+    #lightbox .prev { left:16px; }
+    #lightbox .next { right:16px; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/logo.png" alt="Logo Ouagadougou" />
+    <nav>
+      <ul>
+        <li><a href="PageAccueil.html">Accueil</a></li>
+        <li><a href="PagePatrimoine.html">Patrimoine</a></li>
+        <li><a href="hotels.html">Réservation d'hôtel</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Galerie des sites patrimoniaux de Ouagadougou</h1>
+
+    <div class="galerie-grid" id="galerieGrid">
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/moogo.png" alt="Palais du Moogho Naaba" onclick="openLightbox(0)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATION1.png" alt="Place de la Nation" onclick="openLightbox(1)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/CINEASTE1.png" alt="Monument des Cinéastes Africains" onclick="openLightbox(2)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/ARMEE4.png" alt="Musée des forces armées" onclick="openLightbox(3)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATION2.png" alt="Place de la Nation" onclick="openLightbox(4)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/SANKARA1.png" alt="Mémorial Thomas Sankara" onclick="openLightbox(5)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOOGHO1.png" alt="Palais du Moogho Naaba" onclick="openLightbox(6)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/SANKARA2.png" alt="Mémorial Thomas Sankara" onclick="openLightbox(7)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATION3.png" alt="Place de la Nation" onclick="openLightbox(8)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/SANKARA3.png" alt="Mémorial Thomas Sankara" onclick="openLightbox(9)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/cathédrale.png" alt="Cathédrale de Ouagadougou" onclick="openLightbox(10)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATION4.png" alt="Place de la Nation" onclick="openLightbox(11)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/mosquée.png" alt="Grande mosquée de Ouagadougou" onclick="openLightbox(12)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/CATHEDRALE1.png" alt="Cathédrale de Ouagadougou" onclick="openLightbox(13)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOSQUEE1.png" alt="Grande mosquée de Ouagadougou" onclick="openLightbox(14)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/CINEASTE3.png" alt="Monument des Cinéastes Africains" onclick="openLightbox(15)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOOGHO2.png" alt="Palais du Moogho Naaba" onclick="openLightbox(16)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOSQUEE2.png" alt="Grande mosquée de Ouagadougou" onclick="openLightbox(17)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/martyr1.png" alt="Monument des martyrs" onclick="openLightbox(18)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/CATHEDRALE2.png" alt="Cathédrale de Ouagadougou" onclick="openLightbox(19)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/martyr2.png" alt="Monument des martyrs" onclick="openLightbox(20)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/YENNEGA2.png" alt="Monument Princesse Yennega" onclick="openLightbox(21)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/VILLAGE4.png" alt="Village Artisanal" onclick="openLightbox(22)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/CINEASTE2.png" alt="Monument des Cinéastes Africains" onclick="openLightbox(23)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOSQUEE3.png" alt="Grande mosquée de Ouagadougou" onclick="openLightbox(24)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/VILLAGE5.png" alt="Village Artisanal" onclick="openLightbox(25)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATIONAL4.png" alt="Musée National de Ouagadougou" onclick="openLightbox(26)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/Monument des héros.png" alt="Monument des héros nationaux" onclick="openLightbox(27)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/VILLAGE6.png" alt="Village Artisanal" onclick="openLightbox(28)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/hero1.png" alt="Monument des héros nationaux" onclick="openLightbox(29)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATIONAL3.png" alt="Musée National de Ouagadougou" onclick="openLightbox(30)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MaisonPeuple.png" alt="Maison du Peuple" onclick="openLightbox(31)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/hero2.png" alt="Monument des héros nationaux" onclick="openLightbox(32)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/Sankara.png" alt="Mémorial Thomas Sankara" onclick="openLightbox(33)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/hero3.png" alt="Monument des héros nationaux" onclick="openLightbox(34)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOSQUEE4.png" alt="Grande mosquée de Ouagadougou" onclick="openLightbox(35)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/ARMEE3.png" alt="Musée des forces armées" onclick="openLightbox(36)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATIONAL2.png" alt="Musée National de Ouagadougou" onclick="openLightbox(37)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOOGHO3.png" alt="Palais du Moogho Naaba" onclick="openLightbox(38)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/placenation.png" alt="Place de la Nation" onclick="openLightbox(39)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/MOOGHO4.png" alt="Palais du Moogho Naaba" onclick="openLightbox(40)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/ARMEE2.png" alt="Musée des forces armées" onclick="openLightbox(41)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/Monument des martyrs.png" alt="Monument des Martyrs" onclick="openLightbox(42)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/CINEASTE4.png" alt="Monument des Cinéastes Africains" onclick="openLightbox(43)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/NATIONAL1.png" alt="Musée National de Ouagadougou" onclick="openLightbox(44)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/Monument Princesse Yennega.png" alt="Monument Princesse Yennega" onclick="openLightbox(45)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/Village artisanal.png" alt="Village Artisanal" onclick="openLightbox(46)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/YENNEGA1.png" alt="Monument Princesse Yennega" onclick="openLightbox(47)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/CINEASTE5.png" alt="Monument des Cinéastes Africains" onclick="openLightbox(48)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/peuple.png" alt="Maison du Peuple" onclick="openLightbox(49)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/ARMEE1.png" alt="Musée des forces armées" onclick="openLightbox(50)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/Monument Cinéaste africain.png" alt="Monument des Cinéastes Africains" onclick="openLightbox(51)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/Musée des forces armées.png" alt="Musée des forces armées" onclick="openLightbox(52)" />
+      <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/peuple1.png" alt="Maison du Peuple" onclick="openLightbox(53)" />
+    </div>
+
+    <a href="index.html">← Retour</a>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span class="close" onclick="closeLightbox()">✕</span>
+    <button class="prev" onclick="changeImage(-1)">❮</button>
+    <img id="lightboxImg" src="" alt="Image agrandie" />
+    <button class="next" onclick="changeImage(1)">❯</button>
+  </div>
+
+  <footer>
+    <p>© 2026 Ville de Ouagadougou. Tous droits réservés.</p>
+    <p>Contact : <a href="mailto:info@ouagadougou-tourisme.bf">info@ouagadougou-tourisme.bf</a></p>
+    <p>Réalisé par SOMDA Sambèponé Crépin, TINGA Adaliwè Alexis, DA Mwinssopouorou Odilon &amp; PARE Reine Octavie.</p>
+  </footer>
+
+  <script>
+    const images = Array.from(document.querySelectorAll('.galerie-grid img')).map(img => img.src);
+    let current = 0;
+
+    function openLightbox(index) {
+      current = index;
+      document.getElementById('lightboxImg').src = images[index];
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    function changeImage(dir) {
+      current = (current + dir + images.length) % images.length;
+      document.getElementById('lightboxImg').src = images[current];
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+  </script>
+</body>
+</html>

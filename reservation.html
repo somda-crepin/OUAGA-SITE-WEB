@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réservation Hôtel</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .form-group { margin-bottom: 16px; }
+    label { display: block; margin-bottom: 4px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 12px; }
+    .checkbox-group label { font-weight: normal; display: flex; align-items: center; gap: 6px; }
+    .radio-group { display: flex; flex-wrap: wrap; gap: 16px; }
+    .radio-group label { font-weight: normal; display: flex; align-items: center; gap: 6px; }
+    .btn-submit { background: #b8860b; color: #fff; border: none; padding: 12px 28px; font-size: 1rem; border-radius: 6px; cursor: pointer; }
+    .btn-submit:hover { background: #9a6f00; }
+    #successMsg { display: none; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 16px; border-radius: 6px; margin-top: 20px; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/logo.png" alt="Logo Ouagadougou" />
+    <nav>
+      <ul>
+        <li><a href="PageAccueil.html">Accueil</a></li>
+        <li><a href="PagePatrimoine.html">Patrimoine</a></li>
+        <li><a href="hotels.html">Réservation d'hôtel</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Formulaire de Réservation d'Hôtel</h1>
+
+    <div class="form-group">
+      <label for="nom">Nom complet *</label>
+      <input type="text" id="nom" placeholder="Votre nom complet" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Adresse email *</label>
+      <input type="email" id="email" placeholder="votre@email.com" required />
+    </div>
+
+    <div class="form-group">
+      <label for="tel">Numéro de téléphone *</label>
+      <input type="tel" id="tel" placeholder="+226 XX XX XX XX" required />
+    </div>
+
+    <div class="form-group">
+      <label for="arrivee">Date d'arrivée *</label>
+      <input type="date" id="arrivee" required />
+    </div>
+
+    <div class="form-group">
+      <label for="depart">Date de départ *</label>
+      <input type="date" id="depart" required />
+    </div>
+
+    <div class="form-group">
+      <label for="personnes">Nombre de personnes *</label>
+      <input type="number" id="personnes" min="1" max="20" placeholder="1" required />
+    </div>
+
+    <div class="form-group">
+      <label for="chambre">Type de chambre *</label>
+      <select id="chambre" required>
+        <option value="">-- Choisissez une option --</option>
+        <option value="simple">Simple</option>
+        <option value="double">Double</option>
+        <option value="suite">Suite</option>
+        <option value="familiale">Familiale</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Préférences supplémentaires</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Chambre fumeur</label>
+        <label><input type="checkbox" /> Chambre non-fumeur</label>
+        <label><input type="checkbox" /> Lit bébé</label>
+        <label><input type="checkbox" /> Accès handicapé</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Mode de paiement préféré *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="paiement" value="carte" /> Carte bancaire</label>
+        <label><input type="radio" name="paiement" value="especes" /> Espèces</label>
+        <label><input type="radio" name="paiement" value="cheque" /> Chèque</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="remarques">Remarques / demandes spéciales</label>
+      <textarea id="remarques" rows="4" placeholder="Vos remarques..."></textarea>
+    </div>
+
+    <button class="btn-submit" onclick="submitReservation()">Réserver</button>
+
+    <div id="successMsg">✅ Votre réservation a bien été reçue avec succès !</div>
+
+    <p><a href="hotels.html">← Retour à la liste</a></p>
+  </main>
+
+  <footer>
+    <p>© 2026 Ville de Ouagadougou. Tous droits réservés.</p>
+    <p>Contact : <a href="mailto:info@ouagadougou-tourisme.bf">info@ouagadougou-tourisme.bf</a></p>
+    <p>Réalisé par SOMDA Sambèponé Crépin, TINGA Adaliwè Alexis, DA Mwinssopouorou Odilon &amp; PARE Reine Octavie.</p>
+  </footer>
+
+  <script>
+    function submitReservation() {
+      const nom = document.getElementById('nom').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const arrivee = document.getElementById('arrivee').value;
+      const depart = document.getElementById('depart').value;
+      const chambre = document.getElementById('chambre').value;
+
+      if (!nom || !email || !arrivee || !depart || !chambre) {
+        alert('Veuillez remplir tous les champs obligatoires (*).');
+        return;
+      }
+      document.getElementById('successMsg').style.display = 'block';
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  </script>
+</body>
+</html>
