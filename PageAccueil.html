@@ -3,40 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bienvenue à Ouagadougou</title>
+  <title>Accueil – Ouagadougou</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .ville-img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      border: 3px solid #FCD116;
+    }
+    .points-cles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .point-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      border-left: 5px solid #EF2B2D;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .point-card:nth-child(2) { border-left-color: #FCD116; }
+    .point-card:nth-child(3) { border-left-color: #009A44; }
+    .point-card:nth-child(4) { border-left-color: #EF2B2D; }
+    .point-card h3 { color: #EF2B2D; margin-bottom: 8px; }
+    .point-card:nth-child(2) h3 { color: #c9a200; }
+    .point-card:nth-child(3) h3 { color: #009A44; }
+  </style>
 </head>
 <body>
   <div class="drapeau-bande"><div class="rouge"></div><div class="jaune"></div><div class="vert"></div></div>
   <header>
     <img src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/logo.png" alt="Logo Ouagadougou" />
     <nav><ul>
-      <li><a href="PageAccueil.html">Accueil</a></li>
+      <li><a href="index.html">Accueil</a></li>
       <li><a href="PagePatrimoine.html">Patrimoine</a></li>
       <li><a href="hotels.html">Réservation d'hôtel</a></li>
       <li><a href="galerie.html">Galerie</a></li>
       <li><a href="apropos.html">À propos</a></li>
     </ul></nav>
   </header>
+
   <main>
-    <h1>Bienvenue à Ouagadougou</h1>
-    <p>Ouagadougou, capitale du Burkina Faso, est une ville dynamique, riche de son patrimoine culturel, de ses traditions ancestrales et de sa créativité artistique. Centre politique, économique et culturel du pays, elle est aussi une destination de plus en plus prisée pour le tourisme.</p>
-    <p>La ville abrite plusieurs monuments historiques, musées, jardins, et espaces d'expression artistique. Que vous soyez passionné d'histoire, d'artisanat, de nature ou de rencontres humaines, Ouagadougou vous offre une expérience unique au cœur de l'Afrique de l'Ouest.</p>
-    <h2>Quelques sites touristiques emblématiques :</h2>
+    <h1>Ouagadougou – La Cité des Hommes Intègres</h1>
+
+    <img class="ville-img" src="https://cherif-99.github.io/OUAGA-SITE-WEB/images/placenation.png" alt="Ouagadougou" />
+
+    <h2>Présentation de la ville</h2>
+    <p>
+      <strong>Ouagadougou</strong>, capitale du <strong>Burkina Faso</strong>, est une ville dynamique et accueillante, riche de son patrimoine culturel, de ses traditions ancestrales et de sa créativité artistique. Centre politique, économique et culturel du pays, elle est aussi une destination de plus en plus prisée pour le tourisme en Afrique de l'Ouest.
+    </p>
+    <p>
+      Avec plus de <strong>3 millions d'habitants</strong>, Ouagadougou est la plus grande ville du Burkina Faso. Elle est située au centre du pays, sur le plateau central, à une altitude d'environ 300 mètres. La ville s'étend sur une superficie de plus de <strong>2 500 km²</strong>.
+    </p>
+
+    <h2>Pourquoi visiter Ouagadougou ?</h2>
+    <div class="points-cles">
+      <div class="point-card">
+        <h3>🎬 Capitale du cinéma africain</h3>
+        <p>Ouagadougou accueille le <strong>FESPACO</strong>, le plus grand festival de cinéma d'Afrique, tous les deux ans.</p>
+      </div>
+      <div class="point-card">
+        <h3>🏛️ Riche patrimoine</h3>
+        <p>Plus de <strong>14 sites patrimoniaux</strong> à découvrir, témoins de l'histoire et des traditions du peuple burkinabè.</p>
+      </div>
+      <div class="point-card">
+        <h3>🎨 Art et artisanat</h3>
+        <p>Le <strong>Village Artisanal</strong> propose des œuvres authentiques de sculpteurs, tisserands, potiers et bijoutiers.</p>
+      </div>
+      <div class="point-card">
+        <h3>🤝 Tolérance et paix</h3>
+        <p>Ouagadougou est un modèle de <strong>coexistence pacifique</strong> entre les différentes communautés religieuses et ethniques.</p>
+      </div>
+    </div>
+
+    <h2>Quelques sites touristiques emblématiques</h2>
     <ul>
-      <li>Musée National du Burkina Faso : Objets et traditions des ethnies.</li>
-      <li>Place des Cinéastes : Hommage au cinéma africain.</li>
-      <li>Parc Urbain Bangr-Weoogo : Nature en pleine ville.</li>
-      <li>Monument des Héros Nationaux : Mémoire nationale.</li>
-      <li>Village artisanal : Art et artisanat local.</li>
-      <li>Cathédrale de Ouagadougou : Architecture unique.</li>
-      <li>Grande Mosquée : Spiritualité et diversité.</li>
-      <li>Maison du Peuple : Culture et spectacles.</li>
-      <li>Marché Rood Woko : Cœur commercial de la ville.</li>
-      <li>Sculpture de la femme potière : Hommage au savoir-faire féminin.</li>
+      <li><strong>Musée National du Burkina Faso :</strong> Objets et traditions des différentes ethnies du pays.</li>
+      <li><strong>Place des Cinéastes :</strong> Hommage au cinéma africain et au FESPACO.</li>
+      <li><strong>Palais du Moogho Naaba :</strong> Résidence du roi des Mossis, centre de la royauté traditionnelle.</li>
+      <li><strong>Monument des Héros Nationaux :</strong> Mémoire et fierté nationale.</li>
+      <li><strong>Village Artisanal :</strong> Art et artisanat local authentique.</li>
+      <li><strong>Cathédrale de Ouagadougou :</strong> Architecture néo-romane remarquable.</li>
+      <li><strong>Grande Mosquée :</strong> Spiritualité, diversité et tolérance religieuse.</li>
+      <li><strong>Maison du Peuple :</strong> Culture, spectacles et vie démocratique.</li>
+      <li><strong>Mémorial Thomas Sankara :</strong> Hommage au président révolutionnaire.</li>
+      <li><strong>Monument Princesse Yennenga :</strong> Mère fondatrice du peuple Mossi.</li>
     </ul>
-    <a href="index.html">← Retour</a>
+
+    <h2>Informations pratiques</h2>
+    <div class="info-box">
+      <p><strong>🌍 Pays :</strong> Burkina Faso</p>
+      <p><strong>👥 Population :</strong> Plus de 3 millions d'habitants</p>
+      <p><strong>🌡️ Climat :</strong> Tropical semi-aride (saison sèche et saison des pluies)</p>
+      <p><strong>💱 Monnaie :</strong> Franc CFA (FCFA)</p>
+      <p><strong>🗣️ Langue :</strong> Français (officielle), Mooré, Dioula</p>
+      <p><strong>📅 Année :</strong> 2026</p>
+    </div>
+
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
   </main>
+
   <footer>
     <p>© 2026 Ville de Ouagadougou. Tous droits réservés.</p>
     <p>Contact : <a href="mailto:info@ouagadougou-tourisme.bf">info@ouagadougou-tourisme.bf</a></p>
