@@ -13,9 +13,10 @@
 
 body {
   font-family: Georgia, 'Times New Roman', serif;
-  background: var(--fond);
+  background: var(--fond) url("https://cherif-99.github.io/OUAGA-SITE-WEB/images/placenation.png") center/cover fixed no-repeat;
   color: var(--texte);
   min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -334,4 +335,13 @@ footer a:hover { color: var(--blanc); }
   header { flex-direction: column; align-items: flex-start; }
   h1 { font-size: 1.4rem; }
   .membres-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== OVERLAY IMAGE DE FOND ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(249, 249, 249, 0.88);
+  z-index: -1;
 }
