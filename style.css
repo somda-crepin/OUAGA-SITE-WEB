@@ -13,7 +13,7 @@
 
 body {
   font-family: Georgia, 'Times New Roman', serif;
-  background: var(--fond) url("images/placenation.png") center/cover fixed no-repeat;
+  background: var(--fond) url("placenation.png") center/cover fixed no-repeat;
   color: var(--texte);
   min-height: 100vh;
   position: relative;
